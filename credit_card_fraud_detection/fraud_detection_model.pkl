@@ -1,0 +1,13 @@
+import pickle
+from sklearn.ensemble import RandomForestClassifier
+
+# Example: Generating some dummy data
+X_train = [[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], ...]
+y_train = [0, 1, ...]
+
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+
+# Save the trained model
+with open('fraud_detection_model.pkl', 'wb') as model_file:
+    pickle.dump(model, model_file)

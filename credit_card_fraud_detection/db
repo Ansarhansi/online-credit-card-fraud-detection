@@ -1,0 +1,15 @@
+import sqlite3
+
+conn = sqlite3.connect('database.db')
+c = conn.cursor()
+
+# Create table
+c.execute('''CREATE TABLE transactions
+             (id INTEGER PRIMARY KEY AUTOINCREMENT,
+              feature1 REAL, 
+              feature2 REAL, 
+              feature3 REAL, 
+              fraud INTEGER)''')
+
+conn.commit()
+conn.close()
